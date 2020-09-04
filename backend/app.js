@@ -7,7 +7,7 @@ const path=require('path');
 app.use(cors());
 
 // const { v4: uuidv4 } = require('uuid');
-
+const PORT = process.env.PORT || 7000
 
 var mongoose = require('mongoose');
 
@@ -148,6 +148,4 @@ if(process.env.NODE_ENV === 'production'){
 
   
 
-server.listen(7000, () => {
-    console.log('Server is listening on 7000');
-})
+  server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
