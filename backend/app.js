@@ -3,6 +3,7 @@ const config = require("./Config/key");
 const app = express();
 const cors = require('cors');
 app.use(express.json());
+const path=require('path');
 app.use(cors());
 
 // const { v4: uuidv4 } = require('uuid');
