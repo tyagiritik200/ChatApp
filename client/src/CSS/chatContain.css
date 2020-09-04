@@ -1,0 +1,86 @@
+.inpfield
+{
+    position:absolute;
+    width: 100%;
+    height:8%;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+}
+#msgfield
+{
+    height:91%;
+    padding:10px 8px;
+    overflow: scroll;
+}
+.scrolltobottom
+{
+    height:100%;
+}
+.msg-row
+{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 70%;
+}
+.msg-text
+{
+    padding:4px 8px;
+    /* margin-bottom:5px; */
+    font-size: 1.1rem;
+}
+.msg-time
+{
+    font-size:0.9rem;
+    color:#777;
+}
+.your-msg .msg-text
+{
+    background:#004BAA;
+    color:#eee;
+    border:1px solid #004BAA;
+    border-radius:14px 14px 0 14px;
+}
+.your-msg
+{
+    justify-content: end;
+    justify-items: end;
+}
+.other-msg .msg-text
+{
+    background:#eee;
+    color:#111;
+    border:1px solid #ddd;
+    border-radius:14px 14px 14px 0;
+}
+.other-msg
+{
+    justify-items: start;
+}
+#msg
+{
+    width:52vh;
+    height:5vh;
+    border-radius:18px;
+    border-color:none;
+    display: grid;
+    place-items: center;
+}
+#type
+{
+    width:42vh;
+    outline: none;
+    border: none;
+}
+#submit
+{
+    outline: none;
+    border: none;
+    width:32px;
+    height:32px;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}

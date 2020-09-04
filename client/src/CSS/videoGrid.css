@@ -1,0 +1,24 @@
+#modaldialogpos
+{
+    position: relative;
+    top:4%;
+}
+#videogrid
+{
+    display: grid;
+    height:65vh;
+    justify-content: end;
+    justify-items: end;
+    text-align-last: right;
+    background-image: url('../Pics/videopngpic.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#myVideo
+{
+    position: relative;
+    top:-25vh;
+    z-index: 999;
+    height: 25vh;
+    width:30vh;
+}

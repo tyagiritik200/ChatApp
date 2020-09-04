@@ -1,0 +1,10 @@
+export const USER_LOADING='USER_LOADING';
+export const USER_LOADED='USER_LOADED';
+export const LOGIN_SUCCESS='LOGIN_SUCCESS';
+export const LOGOUT_SUCCESS='LOGOUT_SUCCESS';
+export const LOGIN_FAILED='LOGIN_FAILED';
+export const AUTH_FAILED='AUTH_FAILED';
+export const GET_ERROR='GET_ERROR';
+export const CLEAR_ERROR='CLEAR_ERROR';
+export const SET_STATE='SET_STATE';
+export const SIGNUP_FAILED='SIGNUP_FAILED';
