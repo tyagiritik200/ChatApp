@@ -1,6 +1,7 @@
 const express = require('express');
 const config = require("./Config/key");
 const app = express();
+var morgan= require('morgan')
 const cors = require('cors');
 app.use(express.json());
 const path=require('path');
@@ -20,7 +21,7 @@ mongoose.connect(MONGO_URI,
 
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-
+app.use(morgan('dev'))
 
 
 var users = []
