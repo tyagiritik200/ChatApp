@@ -7,6 +7,7 @@ import { SetState } from '../Redux/index'
 import Layout from '../Component/layout';
 import Login from '../Component/login';
 import Signup from '../Component/signup';
+import VerifyOTP from '../Component/verifyOtp';
 import jwt from 'jsonwebtoken';
 import {SECRET} from '../env';
 const SECRETKEY=process.env.SECRET || SECRET;
@@ -28,15 +29,6 @@ function Route() {
                     })
                 }
             })
-
-            // if (token && jwtDecode(token).exp < Date.now().getTime() - jwtDecode(token).iat) {
-            //     dispatch({
-            //         type: 'LOGOUT_SUCCESS',
-            //         payload: {
-            //             err: ''
-            //         }
-            //     })
-            // }
         }
         dispatch(SetState())
     })
@@ -47,6 +39,7 @@ function Route() {
                     <PrivateRoute path='/chat' authenticated={auth} component={Layout} />
                     <PublicRoute exact path='/' authenticated={auth} component={Login} />
                     <PublicRoute path='/signup' authenticated={auth} component={Signup} />
+                    <PublicRoute path='/forgot' authenticated={auth} component={VerifyOTP} />
                 </Switch>
             </Router>
         </>

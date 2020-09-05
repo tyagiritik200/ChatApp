@@ -2,9 +2,7 @@ const express=require('express');
 const Router=express.Router();
 const messageModel=require('../Models/messages');
 const Authentication=require('../Controller/auth');
-Router.get('/',(req,res,next)=>{
-    res.send('Hello');
-})
+
 
 Router.get('/fetchMessages/:other',Authentication,(req,res,next)=>{
     const from=req.user.id;

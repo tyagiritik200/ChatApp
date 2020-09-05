@@ -12,7 +12,7 @@ function Chatcontainer(props) {
     const [msg, changeMsg] = useState('');
     const [dispemoji, setDispEmoji] = useState(false);
     const [prevmsg, setPrevMsg] = useState([]);
-    const [progress,setProgress]=useState(0);
+    const [progress,setProgress]=useState();
     const [loading,setLoading]=useState(true);
     const token = useSelector(state => state.auth.token);
     const userid = props.userid;
@@ -70,6 +70,7 @@ function Chatcontainer(props) {
             })
                 .then(result => {
                     setPrevMsg(prevmsg => [...prevmsg, result.data]);
+                    setProgress();
                     props.socket.emit('send-chat-msg', (userid, result.data));
 
 
@@ -176,7 +177,7 @@ function Chatcontainer(props) {
 
 
             <div className="bg-white text-white inpfield">
-                {progress>0 && progress<100?<progress value={progress} max="100" style={{width:"150%"},{height:"60%"}}/>:
+                {progress>=0 && progress<=100?<progress value={progress} max="100" style={{width:"150%"},{height:"60%"}}/>:
                 <form method='POST' onSubmit={sendMsg}>
                     <div className="bg-secondary border border-dark d-inline-block" id='msg'>
                         <a type="button" onClick={displayEmoji}>

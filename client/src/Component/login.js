@@ -25,14 +25,17 @@ function Login() {
 
 
     const responseGoogle = (response) => {
-        const user = {
-            name: response.profileObj.name,
-            email: response.profileObj.email,
-            pass: response.profileObj.googleId,
-            confpass: response.profileObj.googleId
-        }
-        loginAction(user);
-        
+        console.log("Response is :"+JSON.stringify(response));
+        console.log('Response Profile Object is :'+response.profileObj);
+        if(response.profileObj){
+            const user = {
+                name: response.profileObj.name,
+                email: response.profileObj.email,
+                pass: response.profileObj.googleId,
+                confpass: response.profileObj.googleId
+            }
+            loginAction(user);
+        }   
     }
     const responseFacebook=(response)=>{
         const user={
@@ -100,6 +103,9 @@ function Login() {
                             <div className="row fmrw">
                                 <div className="col-sm-12 text-center"><input className="bg-info border border-primary text-white" type="submit" value="LOGIN" /></div>
                             </div>
+                            {/* <div className="row fmrw">
+                                <div className="col-sm-12 text-center"><Link to="/forgot">Forgot Password?</Link></div>
+                            </div> */}
                             <p>Don't have an account? <Link to="/signup">SignUp</Link></p>
                         </form>
                         <div className="row">
