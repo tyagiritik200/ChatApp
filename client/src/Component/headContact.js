@@ -23,7 +23,7 @@ function HeadContact(props) {
     }
     const dispatch = useDispatch();
     function logout(socket) {
-        socket.disconnect();
+        // socket.disconnect();
         dispatch({
             type: 'LOGOUT_SUCCESS',
             payload: {

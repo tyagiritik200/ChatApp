@@ -58,9 +58,9 @@ function Layout()
         socket.on('online',(users)=>{
             setOnlineUsers(users);
         })
-        return (()=>{
-            socket.disconnect();
-        })
+        // return (()=>{
+        //     socket.disconnect();
+        // })
     },[])
     useEffect(()=>{
         socket.on('accept-video-call',(data)=>{
