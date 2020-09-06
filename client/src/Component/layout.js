@@ -59,7 +59,7 @@ function Layout()
             setOnlineUsers(users);
         })
         return (()=>{
-            socket.emit('disconnect');
+            socket.disconnect();
         })
     },[])
     useEffect(()=>{
