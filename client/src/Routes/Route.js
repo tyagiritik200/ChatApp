@@ -36,9 +36,9 @@ function Route() {
         <>
             <Router>
                 <Switch>
-                    <PrivateRoute path='/chat' authenticated={auth} component={Layout} />
+                    <PrivateRoute exact path='/chat' authenticated={auth} component={Layout} />
                     <PublicRoute exact path='/' authenticated={auth} component={Login} />
-                    <PublicRoute path='/signup' authenticated={auth} component={Signup} />
+                    <PublicRoute exact path='/signup' authenticated={auth} component={Signup} />
                     <PublicRoute path='/forgot' authenticated={auth} component={VerifyOTP} />
                 </Switch>
             </Router>
