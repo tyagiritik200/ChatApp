@@ -48,11 +48,11 @@ io.on('connection', socket => {
         socket.to(id).emit('received-notification',{note})
     })
 
-    socket.on('disconnect', () => {
+    socket.on('offline', () => {
         // var leftuser=users.find(user=>user.socketId==socket.id);
         // console.log(leftuser.userId+" left the room");
         users = users.filter(user => user.socketId != socket.id)
-        console.log('Socket disconnects with id :'+socket.id);
+        console.log('User offline with id :'+socket.id);
         // LeftRoom();
         io.emit('online', users);
     })
