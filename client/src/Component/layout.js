@@ -53,7 +53,7 @@ function Layout()
         })
     },[])
     useEffect(()=>{
-        socket.connect();
+        // socket.connect();
         socket.emit('join', curruserid);
         socket.on('online',(users)=>{
             setOnlineUsers(users);
