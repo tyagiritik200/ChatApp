@@ -51,10 +51,8 @@ function ChatContact(props) {
                                         <img className="align-self-center mr-3 rounded-circle img-fluid" src={logo} alt="Generic placeholder image" height="60px" width="60px" />
                                         <div className="media-body">
                                             <div className="row">
-                                            <div className="col-9">
+                                            <div className="col-9 text-wrap" style={{width: "6rem"}}>
                                             <h5 className="mt-1 mb-1">{contact.name}</h5>
-                                            {/* {(lastmsg && lastmsg.from==contact._id && lastmsg.msgtype=="image")?<><i className="fas fa-image"></i><span> Photo</span></>:(contact.lastmsg && contact.lastmsg.msgtype=="image"?<><i className="fas fa-image"></i><span> Photo</span></>:"")}
-                                            <p className="col-12 text-truncate p-0 m-0">{(lastmsg && lastmsg.from==contact._id && lastmsg.msgtype=="text")?lastmsg.msg:(contact.lastmsg && contact.lastmsg.msgtype=="text"?contact.lastmsg.msg:"")}</p> */}
                                             {lastmsg && lastmsg.from==contact._id?
                                                 (lastmsg.msgtype=='text'?(<p className="col-12 text-truncate p-0 m-0">{lastmsg.msg}</p>):(lastmsg.msgtype=='image')?<><i className="fas fa-image"></i><span> Photo</span></>:(lastmsg.msgtype=='video')?<><i className="fas fa-video"></i><span> Video</span></>:""):
                                             (contact.lastmsg?
@@ -62,7 +60,7 @@ function ChatContact(props) {
                                             :"")
                                             }
                                             </div>
-                                            <div className="col-2">
+                                            <div className="col-3">
                                                 <p style={{fontSize:"80%"}} className="mt-1 mb-1 p-0">{(lastmsg && lastmsg.from==contact._id)?recentmsgtime:(contact.lastmsg ?databasemsgtime:"")}</p>
                                             </div>
                                             </div>

@@ -136,9 +136,6 @@ app.use('/msg', msgRoutes);
 const changePassRoutes = require('./Routes/changepass');
 app.use('/pass', changePassRoutes);
 
-app.get('/video', (req, res, next) => {
-    res.redirect(`/video/${uuidv4()}`);
-})
 
 
 

@@ -153,7 +153,7 @@ function Chatcontainer(props) {
                                 <div key={index} className="msg-row other-msg">
                                     {item.msgtype=="image"?<div className='msg-text'><img src={item.msg} alt="pic" style={{height:"30vh"},{width:"30vh"}}/></div>:
                                     item.msgtype=="video"?<div className='msg-text'><video alt="video" style={{height:"30vh"},{width:"30vh"}} controls><source src={item.msg} type="video/mp4"/></video></div>:
-                                    <div className='msg-text'>{item.msg}</div>}
+                                    <div className='msg-text overflow-wrap: break-word'>{item.msg}</div>}
                                     <div className='msg-time'>{moment(item.date).format("hh:mm a")}</div>
                                 </div>
                             )

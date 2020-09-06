@@ -83,8 +83,8 @@ function VideoGrid(props) {
 
                 function RemovePeer(){
                     console.log('Remove Peer');
-                    if(document.getElementById('peerVideo'))
-                        document.getElementById('peerVideo').remove();
+                    // if(document.getElementById('peerVideo'))
+                    //     document.getElementById('peerVideo').remove();
                     setModalState(!modalState);
                     localStream.getTracks().forEach(tracks=>tracks.stop())
                     socket.emit('Leave-Video-Room',currUser);
