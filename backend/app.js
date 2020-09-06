@@ -52,6 +52,7 @@ io.on('connection', socket => {
         // var leftuser=users.find(user=>user.socketId==socket.id);
         // console.log(leftuser.userId+" left the room");
         users = users.filter(user => user.socketId != socket.id)
+        console.log('Socket disconnects with id :'+socket.id);
         // LeftRoom();
         io.emit('online', users);
     })
