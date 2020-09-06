@@ -10,8 +10,8 @@ import jwt from 'jsonwebtoken';
 import IncomingCallGrid from './incomingCallGrid';
 import Axios from 'axios';
 // const server = 'http://localhost:7000';
-const server='https://ritikchatapp.herokuapp.com'
-const socket = io.connect(server);
+// const server='https://ritikchatapp.herokuapp.com'
+const socket = io.connect();
 
 
 

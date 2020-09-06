@@ -30,7 +30,7 @@ let videoUsers = [];
 let videoRoom;
 let CallTo;
 io.on('connection', socket => {
-    console.log('Welcome User');
+    console.log('Socket connected on id :'+socket.id);
     socket.on('join', (curruser) => {
         var data = {
             socketId: socket.id,

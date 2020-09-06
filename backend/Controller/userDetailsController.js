@@ -182,7 +182,7 @@ exports.add_last_message=(req,res,next)=>{
         result.contacts.splice(ind,1,newobject);
         userModel.findByIdAndUpdate(curr,{$set:{contacts:result.contacts}})
         .then(final=>{
-            console.log("Done");
+            console.log("Sender last msg Done");
         })
     })
     .catch(err=>{
@@ -201,7 +201,7 @@ exports.add_last_message=(req,res,next)=>{
         result.contacts.splice(ind,1,newobject);
         userModel.findByIdAndUpdate(other,{$set:{contacts:result.contacts}})
         .then(final=>{
-            console.log("Done");
+            console.log("Receiver last msg done");
         })
     })
     .catch(err=>{

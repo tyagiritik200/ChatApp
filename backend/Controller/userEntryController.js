@@ -57,7 +57,6 @@ exports.add_new_user = (req, res, next) => {
 
 exports.login = (req, res, next) => {
     const { email, pass, google } = req.body;
-    console.log('Google login :' + google);
     if (!google && (!passvalid(pass) || !emailvalid(email)))
         res.status(400).json({ err: 'Provide Valid Credentials' });
     else {
@@ -66,7 +65,6 @@ exports.login = (req, res, next) => {
                 if (!result)
                     res.status(400).json({ err: 'Invalid Credentials' });
                 else {
-                    console.log(result);
                     bcrypt.compare(pass, result.pass)
                         .then(isMatched => {
                             if (!isMatched)

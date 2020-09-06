@@ -25,8 +25,6 @@ function Login() {
 
 
     const responseGoogle = (response) => {
-        console.log("Response is :"+JSON.stringify(response));
-        console.log('Response Profile Object is :'+response.profileObj);
         if(response.profileObj){
             const user = {
                 name: response.profileObj.name,
