@@ -11,10 +11,9 @@ import IncomingCallGrid from './incomingCallGrid';
 import Axios from 'axios';
 // const server = 'http://localhost:7000';
 // const server='https://ritikchatapp.herokuapp.com'
+const socket=io.connect();
 
 
-
-let socket;
 function SwitchLayout(props){
     if(props.layout===2)
         return <ChatHead userid={props.userid} username={props.username} onlineusers={props.onlineusers} socket={props.socket} currUserName={props.currUserName}/>;
@@ -53,8 +52,6 @@ function Layout()
         })
     },[])
     useEffect(()=>{
-        // socket.connect();
-        socket = io.connect();
         socket.emit('join', curruserid);
         socket.on('online',(users)=>{
             setOnlineUsers(users);
