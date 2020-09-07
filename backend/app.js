@@ -32,6 +32,7 @@ let CallTo;
 io.on('connection', socket => {
     console.log('Socket connected on id :'+socket.id);
     socket.on('join', (curruser) => {
+        console.log('New User Joined :'+curruser);
         var data = {
             socketId: socket.id,
             userId: curruser
@@ -41,6 +42,7 @@ io.on('connection', socket => {
         io.emit('online', users);
     })
     socket.on('send-chat-msg', (msg) => {
+        console.log('Send Chat Msg')
         socket.to(msg.to).emit('accept-msg', msg);
     })
     socket.on('send-notification',({note,id})=>{
